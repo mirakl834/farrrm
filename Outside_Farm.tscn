@@ -8,10 +8,10 @@
 [ext_resource path="res://Player.gd" type="Script" id=6]
 [ext_resource path="res://Assets/sprite_bunny1.png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16.904, 10 )
+extents = Vector2( 16.904, 3.70306 )
 
 [node name="World" type="Node" index="0"]
 
@@ -40,9 +40,16 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="House" type="Node2D" parent="." index="1"]
+[node name="House" type="StaticBody2D" parent="." index="1"]
 
-position = Vector2( -217.046, -209.885 )
+position = Vector2( 136.955, 131.944 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -50,7 +57,8 @@ __meta__ = {
 [node name="Walls" type="Node2D" parent="House" index="0"]
 
 editor/display_folded = true
-position = Vector2( 18.5145, -22.4546 )
+position = Vector2( 107.11, -57.466 )
+scale = Vector2( 0.684158, 0.684158 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -201,6 +209,8 @@ _sections_unfolded = [ "Region" ]
 [node name="Decors" type="Node2D" parent="House" index="1"]
 
 editor/display_folded = true
+position = Vector2( 94.4435, -42.1035 )
+scale = Vector2( 0.684158, 0.684158 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -243,7 +253,8 @@ region_rect = Rect2( 855, 80, 140, 320 )
 [node name="Roofs" type="Node2D" parent="House" index="2"]
 
 editor/display_folded = true
-position = Vector2( 456.581, -498.512 )
+position = Vector2( 406.817, -383.164 )
+scale = Vector2( 0.684158, 0.684158 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -295,10 +306,15 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 455, 504 )
 _sections_unfolded = [ "Region" ]
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="House" index="3"]
+
+build_mode = 0
+polygon = PoolVector2Array( -8.95563, 43.0554, -33.9209, 27.5234, -35.1698, -298.435, 247.805, -462.478, 556.976, -629.636, 944.529, -192.87, 950.552, 103.909, 527.947, 344.749, 22.0444, 59.0553 )
+
 [node name="Player" type="KinematicBody2D" parent="." index="2"]
 
 editor/display_folded = true
-position = Vector2( 553.178, 328.447 )
+position = Vector2( 224.591, 314.271 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -314,34 +330,8 @@ texture = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="1"]
 
-position = Vector2( 0, 32 )
-scale = Vector2( 1.45847, 2.96154 )
-shape = SubResource( 1 )
-
-[node name="Camera2D" type="Camera2D" parent="Player" index="2"]
-
-position = Vector2( -5.47021, -31.8431 )
-anchor_mode = 1
-rotating = false
-current = false
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
+position = Vector2( 0, 56.1566 )
+scale = Vector2( 1.45847, 4.43376 )
+shape = SubResource( 2 )
 
 
