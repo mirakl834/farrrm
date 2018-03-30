@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://TileSets/tileset_indoor.tres" type="TileSet" id=1]
+[ext_resource path="res://TileSets/objects_house.tres" type="TileSet" id=2]
+[ext_resource path="res://DoorEntry.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=4]
+
+[node name="World" type="Node"]
+
+[node name="Floor" type="TileMap" parent="." index="0"]
+
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 425, 235 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -65538, 1, 0, -65537, 0, 0, -131072, 1, 0, -131071, 0, 0, -131070, 1, 0, -2, 0, 0, -1, 1, 0, -65536, 0, 0, -65535, 1, 0, -65534, 0, 0, 65534, 1, 0, 65535, 0, 0, 0, 1, 0, 1, 0, 0, 2, 1, 0, 131070, 0, 0, 131071, 1, 0, 65536, 0, 0, 65537, 1, 0, 65538, 0, 0, 131072, 1, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Objects" type="TileMap" parent="." index="1"]
+
+mode = 1
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 425, 235 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -65538, 3, 0, 65534, 0, 0 )
+_sections_unfolded = [ "Cell" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Door" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( -435.917, 232.155 )
+nextMap = "res://Scenes/Outside_Farm.tscn"
+
+[node name="Player" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( -243.112, 156.773 )
+
+

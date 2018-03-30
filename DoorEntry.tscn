@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Door.gd" type="Script" id=1]
+
+[node name="Door" type="Area2D" index="0"]
+
+rotation = 0.00357877
+input_pickable = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
+nextMap = null
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
+
+build_mode = 0
+polygon = PoolVector2Array( -85.3187, 93.0309, -89.4579, 23.9825, 70.481, 114.364, 69.4372, 187.514 )
+_sections_unfolded = [ "Transform" ]
+
+
